@@ -15,25 +15,27 @@ const removeAllChildNodes = (parent) => {
 
 const setCurrentContent = (watchText) => {
   document.getElementById("output-path").innerText = watchText;
+  clipboard.writeText(watchText)
 };
 
-const setCurrentContent2 = (event) => {
+// const setCurrentContent2 = (event) => {
   
-  document.getElementById("output-path").innerText = event;
-};
+//   document.getElementById("output-path").innerText = event;
+//   clipboard.writeText(event)
+// };
 
 // Update the
-const refreshContent = (newContent) => {
+const refreshUI = (newContent) => {
   var contentWrapper = document.getElementById("content-wrapper");
   removeAllChildNodes(contentWrapper);
   newContent.forEach((element, idx) => {
     let li = document.createElement("li");
-    li.className = "hoverable"
+    li.setAttribute("class", "hoverable");
     var aTag = document.createElement("a");
     aTag.setAttribute("href", "#");
-    aTag.className = "collection-item  truncate waves-effect waves-purple black-text #b2dfdb teal lighten-5";
+    aTag.className = "collection-item  truncate waves-effect waves-red black-text #b2dfdb teal lighten-5";
     aTag.innerText = element;
-    aTag.addEventListener('click', function (){setCurrentContent2(element)})
+    aTag.addEventListener('click', function (){setCurrentContent(element)})
     li.appendChild(aTag);
     contentWrapper.appendChild(li);
   });
@@ -51,18 +53,15 @@ const updateContent = () => {
 
 const watchClipBoard = () => {
   watchText = clipboard.readText();
-  if (watchText != currentText) {
+  // new content on the clipboard and also not already there in the contents array
+  if ((watchText != currentText) && (!contents.includes(watchText))) {
     updateContent(contents);
     setCurrentContent(watchText);
-    // let div = document.createElement("div");
-    // let text = document.createTextNode(watchText);
-    // div.appendChild(text);
-    // contentWrapper.appendChild(div);
-    refreshContent(contents);
+    refreshUI(contents);
     currentText = watchText;
     var x = document.getElementById("content-wrapper").childElementCount;
     if (x == 3) {
-      refreshContent(contentWrapper, []);
+      refreshUI(contentWrapper, []);
     }
   }
 };
