@@ -1,6 +1,6 @@
 .container {
   width: 400px;
-  margin-top: 70px;
+  margin-top: 20px;
   padding: 0 20px;
 }
 
@@ -11,15 +11,22 @@
 .btn {
   width: 100%;
 }
-
-
-.output {
-  margin-top: 40px;
+.collection-item {
+  border: 3px solid #fff;
 }
+.output {
+  margin-top: 20px;
+}
+
+
+ .btn.btn-custom { border: 1px solid black;  }
+
 
 .collection-item{
-	background-color: burlywood;
+  background-color: burlywood;
+  height:55px;
 }
+
 
 #output-path {
   font-weight: bold;

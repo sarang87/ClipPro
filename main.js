@@ -3,9 +3,7 @@ const {
   ipcMain,
   BrowserWindow,
   globalShortcut,
-  clipboard,
 } = require("electron");
-// /const clipboard = electron.clipboard;
 
 process.env.NODE_ENV = "development";
 
@@ -17,11 +15,12 @@ const createMainWindow = () => {
     width: 550,
     height: 600,
     icon: "./assets/icons/logo.jpg",
-    resizable: isDev ? false : true,
+    resizable: true,
     webPreferences: {
       nodeIntegration: true,
     },
   });
+  mainWindow.setMenuBarVisibility(false)
 
   //mainWindow.loadURL('https://www.instagram.com')
   //mainWindow.loadURL('file://' + __dirname + '/index.html');
@@ -55,4 +54,4 @@ app.on("activate", () => {
   }
 });
 
-console.log("Hello world!");
+

@@ -13,29 +13,33 @@ const removeAllChildNodes = (parent) => {
   }
 };
 
+const setCurrentContent = (watchText) => {
+  document.getElementById("output-path").innerText = watchText;
+};
+
+const setCurrentContent2 = (event) => {
+  
+  document.getElementById("output-path").innerText = event;
+};
+
 // Update the
 const refreshContent = (newContent) => {
   var contentWrapper = document.getElementById("content-wrapper");
   removeAllChildNodes(contentWrapper);
   newContent.forEach((element, idx) => {
     let li = document.createElement("li");
-    li.class="red lighten-3"
+    li.className = "hoverable"
     var aTag = document.createElement("a");
     aTag.setAttribute("href", "#");
-    aTag.setAttribute("class","collection-item")
+    aTag.className = "collection-item  truncate waves-effect waves-purple black-text #b2dfdb teal lighten-5";
     aTag.innerText = element;
-    // div.id = 'content-' + idx
-    // div.style ="cursor: pointer;"
-    // div.onclick="href='#';"
-    let text = document.createTextNode(element);
+    aTag.addEventListener('click', function (){setCurrentContent2(element)})
     li.appendChild(aTag);
     contentWrapper.appendChild(li);
   });
 };
 
-const setCurrentContent = (watchText) => {
-  document.getElementById("output-path").innerText = watchText;
-};
+
 
 const updateContent = () => {
   contents.push(watchText);
