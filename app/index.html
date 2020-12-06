@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline'"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>ClipPro</title>
+  </head>
+  <body>
+    <div class="container center-align">
+      <h3><i class="fas fa-images"></i> ClipPro</h3>
+      <p>Cut Copy Paste++</p>
+
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Clipboard current</span>
+        </div>
+        <div class="file-path-wrapper">
+          <ul id="output-path"></ul>
+        </div>
+        <div class="btn">
+            <span>Clipboard History</span>
+          </div>
+          
+            <ul class="collection" id="content-wrapper"></ul>
+          </div>
+      </div>
+
+   
+    </div>
+
+    <script src="js/materialize.min.js"></script>
+    <script src="js/monitor.js"></script>
+  </body>
+</html>
