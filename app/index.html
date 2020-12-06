@@ -18,23 +18,21 @@
       <p>Toggle through your clipboard history</p>
 
       <div class="file-field input-field">
-        <div class="btn btn-custom black-text #fce4ec #fce4ec pink lighten-5">
-          <span>Clipboard current</span>
+        <div class="btn btn-custom black-text #b2dfdb teal lighten-1">
+          <span>Selected Text</span>
         </div>
-        <div class="file-path-wrapper">
-          <ul class="collection hoverable" >
-            <li id="output-path" class="#ffebee red lighten-5 collection-item truncate"></li>
-          </ul>
-        </div>
-        <div class="btn btn-custom black-text #fce4ec #b2dfdb teal lighten-3">
-            <span>Clipboard History</span>
-        </div>
-        <div class="file-path-wrapper">
-            <ul class="collection hoverable" id="content-wrapper"></ul>
-        </div>
-      </div>
+        <ul class="collection hoverable">
+          <a
+            id="output-path"
+            class="collection-item #eceff1 blue-grey lighten-5 black-text"
+          ></a>
+        </ul>
 
-   
+        <div class="btn btn-custom black-text #b2dfdb teal lighten-4">
+          <span>Clipboard History</span>
+        </div>
+        <div class="collection" id="content-wrapper"></div>
+      </div>
     </div>
 
     <script src="js/materialize.min.js"></script>

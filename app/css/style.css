@@ -11,22 +11,15 @@
 .btn {
   width: 100%;
 }
-.collection-item {
-  border: 3px solid #fff;
-}
+
 .output {
   margin-top: 20px;
 }
 
-
- .btn.btn-custom { border: 1px solid black;  }
-
-
-.collection-item{
-  background-color: burlywood;
-  height:55px;
+.collection-item {
+  height: 55px;
+  border-top: 2px solid #fff;
 }
-
 
 #output-path {
   font-weight: bold;

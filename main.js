@@ -19,6 +19,7 @@ const createMainWindow = () => {
     webPreferences: {
       nodeIntegration: true,
     },
+    frame: false
   });
   mainWindow.setMenuBarVisibility(false)
 
@@ -36,7 +37,9 @@ app.on("ready", () => {
   globalShortcut.register("CmdOrCtrl+W", () => {
     mainWindow.close();
   });
-
+  globalShortcut.register("CmdOrCtrl+N", () => {
+    mainWindow.show();
+  });
 
 
   mainWindow.on("close", () => (mainWindow = null));

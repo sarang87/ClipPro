@@ -29,15 +29,13 @@ const refreshUI = (newContent) => {
   var contentWrapper = document.getElementById("content-wrapper");
   removeAllChildNodes(contentWrapper);
   newContent.forEach((element, idx) => {
-    let li = document.createElement("li");
-    li.setAttribute("class", "hoverable");
     var aTag = document.createElement("a");
     aTag.setAttribute("href", "#");
-    aTag.className = "collection-item  truncate waves-effect waves-red black-text #b2dfdb teal lighten-5";
+    aTag.setAttribute("id", idx);
+    aTag.className += "collection-item hoverable waves-effect waves-teal black-text";
     aTag.innerText = element;
     aTag.addEventListener('click', function (){setCurrentContent(element)})
-    li.appendChild(aTag);
-    contentWrapper.appendChild(li);
+    contentWrapper.appendChild(aTag);
   });
 };
 
