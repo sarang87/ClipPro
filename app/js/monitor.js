@@ -1,5 +1,3 @@
-const path = require("path");
-const os = require("os");
 const { clipboard } = require("electron");
 const { spawn } = require("child_process");
 const MAX_SIZE = 5;
@@ -7,24 +5,21 @@ let currentText = clipboard.readText();
 let contents = [];
 document.getElementById("output-path").innerText = currentText;
 
+// helper method to remove all nodes for a parent node in DOM
 const removeAllChildNodes = (parent) => {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
   }
 };
 
+// helper method to set the UI and system clipboard to clicked or selected content
 const setCurrentContent = (watchText) => {
   document.getElementById("output-path").innerText = watchText;
   clipboard.writeText(watchText)
 };
 
-// const setCurrentContent2 = (event) => {
-  
-//   document.getElementById("output-path").innerText = event;
-//   clipboard.writeText(event)
-// };
 
-// Update the
+// Update the UI
 const refreshUI = (newContent) => {
   var contentWrapper = document.getElementById("content-wrapper");
   removeAllChildNodes(contentWrapper);
@@ -40,15 +35,16 @@ const refreshUI = (newContent) => {
 };
 
 
-
+// Add new content to the contents array (backend) and slice if it exceeds maxsize
 const updateContent = () => {
   contents.push(watchText);
-  // if (contents.length >= MAX_SIZE){
-  //     let l = contents.length
-  //     contents = contents.slice(l-MAX_SIZE, l)
-  // }
+  if (contents.length >= MAX_SIZE){
+      let l = contents.length
+      contents = contents.slice(l-MAX_SIZE, l)
+  }
 };
 
+// watch for new content on the clipboard
 const watchClipBoard = () => {
   watchText = clipboard.readText();
   // new content on the clipboard and also not already there in the contents array
@@ -57,10 +53,6 @@ const watchClipBoard = () => {
     setCurrentContent(watchText);
     refreshUI(contents);
     currentText = watchText;
-    var x = document.getElementById("content-wrapper").childElementCount;
-    if (x == 3) {
-      refreshUI(contentWrapper, []);
-    }
   }
 };
 

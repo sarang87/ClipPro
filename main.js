@@ -5,11 +5,10 @@ const {
   globalShortcut,
 } = require("electron");
 
+const isDev = process.env.NODE_ENV != "production" ? true : false;
 process.env.NODE_ENV = "development";
-
 let mainWindow;
 
-const isDev = process.env.NODE_ENV != "production" ? true : false;
 const createMainWindow = () => {
   mainWindow = new BrowserWindow({
     width: 550,
@@ -22,9 +21,6 @@ const createMainWindow = () => {
     frame: false
   });
   mainWindow.setMenuBarVisibility(false)
-
-  //mainWindow.loadURL('https://www.instagram.com')
-  //mainWindow.loadURL('file://' + __dirname + '/index.html');
   mainWindow.loadFile("./app/index.html");
 };
 
@@ -40,8 +36,6 @@ app.on("ready", () => {
   globalShortcut.register("CmdOrCtrl+N", () => {
     mainWindow.show();
   });
-
-
   mainWindow.on("close", () => (mainWindow = null));
 });
 

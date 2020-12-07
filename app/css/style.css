@@ -16,6 +16,10 @@
   margin-top: 20px;
 }
 
+.btn.btn-custom {
+  margin-bottom: 10px;
+}
+
 .collection-item {
   height: 55px;
   border-top: 2px solid #fff;
