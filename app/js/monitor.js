@@ -25,11 +25,13 @@ const refreshUI = (newContent) => {
   removeAllChildNodes(contentWrapper);
   newContent.forEach((element, idx) => {
     var aTag = document.createElement("a");
+    var copyBtn = document.getElementById("copy-all-btn");
     aTag.setAttribute("href", "#");
     aTag.setAttribute("id", idx);
     aTag.className += "collection-item hoverable waves-effect waves-teal black-text";
     aTag.innerText = element;
-    aTag.addEventListener('click', function (){setCurrentContent(element)})
+    aTag.addEventListener('click', function (){setCurrentContent(element)});
+    copyBtn.addEventListener('click', function (){copyAllContent()});
     contentWrapper.appendChild(aTag);
   });
 };
@@ -42,6 +44,11 @@ const updateContent = () => {
       let l = contents.length
       contents = contents.slice(l-MAX_SIZE, l)
   }
+};
+
+const copyAllContent = () => {
+  var allContent = contents.join(",")
+  clipboard.writeText(allContent)
 };
 
 // watch for new content on the clipboard
