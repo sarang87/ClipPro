@@ -1,6 +1,6 @@
 const { clipboard } = require("electron");
 const { spawn } = require("child_process");
-const MAX_SIZE = 5;
+const MAX_SIZE = 15;
 let currentText = clipboard.readText();
 let contents = [];
 document.getElementById("output-path").innerText = currentText;

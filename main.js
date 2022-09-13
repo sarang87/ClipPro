@@ -13,7 +13,7 @@ const createMainWindow = () => {
   mainWindow = new BrowserWindow({
     width: 550,
     height: 600,
-    icon: "./assets/icons/logo.jpg",
+    icon: "./assets/icons/logo.png",
     resizable: true,
     webPreferences: {
       nodeIntegration: true,
