@@ -30,12 +30,12 @@ app.on("ready", () => {
     mainWindow.reload();
   });
 
-  globalShortcut.register("CmdOrCtrl+W", () => {
-    mainWindow.close();
-  });
-  globalShortcut.register("CmdOrCtrl+N", () => {
-    mainWindow.show();
-  });
+  // globalShortcut.register("CmdOrCtrl+W", () => {
+  //   mainWindow.close();
+  // });
+  // globalShortcut.register("CmdOrCtrl+N", () => {
+  //   mainWindow.show();
+  // });
   mainWindow.on("close", () => (mainWindow = null));
 });
 
