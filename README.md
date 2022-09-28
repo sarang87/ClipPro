@@ -1,23 +1,23 @@
 README
 
-#Run locally
+# Run locally
 
-1. Make sure electron is installed. Run the following command 
-`npm install electron`
+	1. Make sure electron is installed. Run the following command 
+	`npm install electron`
 
-2. Start the app
-`npm start`
+	2. Start the app
+	`npm start`
 
-3. Package app
-https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
+	3. Package app
+	https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
 
---npm install --save-dev @electron-forge/cli-- already added to package.json
-npx electron-forge import
+	--npm install --save-dev @electron-forge/cli-- already added to package.json
 
-npm run make
+	npx electron-forge import
 
-#Copy to Mac Applications
+# Build application for platform
+	npm run make
 
-cp out/electron-cap-darwin-arm64/electron-cap.app/Contents/MacOS/electron-cap /Applications/
+	#Copy to Mac Applications
 
-
+	cp out/ClipPro-darwin-arm64/ClipPro.app/Contents/MacOS/ClipPro /Applications/

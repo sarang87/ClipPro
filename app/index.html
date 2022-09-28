@@ -16,10 +16,14 @@
     <div class="container center-align">
       <h3><i class="far fa-clipboard"></i> ClipPro</h3>
       <p>Toggle through your clipboard history</p>
+<tab-group new-tab-button="true" sortable="true">New Tab</tab-group>
 
       <div class="file-field input-field">
         <div class="btn btn-custom black-text #b2dfdb teal lighten-1" id="copy-all-btn">
           <span>Copy All Text</span>
+        </div>
+        <div class="btn btn-custom black-text #b2dfdb teal lighten-1" id="clear-all-btn">
+          <span>Clear All Text</span>
         </div>
         <ul class="collection hoverable">
           <a
@@ -37,5 +41,26 @@
 
     <script src="js/materialize.min.js"></script>
     <script src="js/monitor.js"></script>
+    <script src="node_modules/electron-tabs/dist/electron-tabs.js"></script>
+    <script>
+  // Select tab-group
+  const tabGroup = document.querySelector("tab-group");
+
+  // Setup the default tab which is created when the "New Tab" button is clicked
+  tabGroup.setDefaultTab({
+    title: "New Page",
+    src: "urls.html",
+    active: true
+  });
+
+  // Do stuff
+  const tab = tabGroup.addTab({
+    title: "electron-tabs on NPM",
+    src: "https://www.npmjs.com/package/electron-tabs"
+  });
+  const pos = tab.getPosition();
+  console.log("Tab position is " + pos);
+</script>
+
   </body>
 </html>

@@ -1,6 +1,6 @@
 const { clipboard } = require("electron");
 const { spawn } = require("child_process");
-const MAX_SIZE = 15;
+const MAX_SIZE = 100;
 let currentText = clipboard.readText();
 let contents = [];
 document.getElementById("output-path").innerText = currentText;
@@ -26,12 +26,14 @@ const refreshUI = (newContent) => {
   newContent.forEach((element, idx) => {
     var aTag = document.createElement("a");
     var copyBtn = document.getElementById("copy-all-btn");
+    var clearBtn = document.getElementById("clear-all-btn");
     aTag.setAttribute("href", "#");
     aTag.setAttribute("id", idx);
     aTag.className += "collection-item hoverable waves-effect waves-teal black-text";
     aTag.innerText = element;
     aTag.addEventListener('click', function (){setCurrentContent(element)});
     copyBtn.addEventListener('click', function (){copyAllContent()});
+    clearBtn.addEventListener('click', function (){clearAllContent()});
     contentWrapper.appendChild(aTag);
   });
 };
@@ -47,8 +49,15 @@ const updateContent = () => {
 };
 
 const copyAllContent = () => {
-  var allContent = contents.join(",")
-  clipboard.writeText(allContent)
+  var allContent = contents.join(",");
+  clipboard.writeText(allContent);
+};
+
+const clearAllContent = () => {
+  contents.length = 0;
+  updateContent(contents);
+  refreshUI(contents);
+  //currentText = watchText;
 };
 
 // watch for new content on the clipboard

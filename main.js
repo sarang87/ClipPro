@@ -17,6 +17,7 @@ const createMainWindow = () => {
     resizable: true,
     webPreferences: {
       nodeIntegration: true,
+      webviewTag: true
     },
     frame: false
   });
