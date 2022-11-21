@@ -3,6 +3,7 @@ const {
   ipcMain,
   BrowserWindow,
   globalShortcut,
+  BrowserView
 } = require("electron");
 
 const isDev = process.env.NODE_ENV != "production" ? true : false;
@@ -23,6 +24,13 @@ const createMainWindow = () => {
   });
   mainWindow.setMenuBarVisibility(false)
   mainWindow.loadFile("./app/index.html");
+
+  // BrowserView to implement tabs for scratchpad functionality
+  // TODO : make this view button toggle and change position
+  const view = new BrowserView()
+  mainWindow.setBrowserView(view)
+  view.setBounds({ x: 0, y: 0, width: 300, height: 300 })
+  view.webContents.loadURL('https://electronjs.org')
 };
 
 app.on("ready", () => {
