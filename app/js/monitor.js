@@ -41,6 +41,7 @@ const refreshUI = (newContent) => {
 
 // Add new content to the contents array (backend) and slice if it exceeds maxsize
 const updateContent = () => {
+  contents.unshift(watchText);
   contents.push(watchText);
   if (contents.length >= MAX_SIZE){
       let l = contents.length
