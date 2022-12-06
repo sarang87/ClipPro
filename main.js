@@ -28,9 +28,6 @@ const createMainWindow = () => {
 
 app.on("ready", () => {
   createMainWindow();
-  globalShortcut.register("CmdOrCtrl+R", () => {
-    mainWindow.reload();
-  });
   mainWindow.on("close", () => (mainWindow = null));
 });
 
