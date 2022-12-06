@@ -21,3 +21,13 @@ README
 	#Copy to Mac Applications
 
 	cp out/ClipPro-darwin-arm64/ClipPro.app/Contents/MacOS/ClipPro /Applications/
+
+# Build for Sarang's macbook darwin amd64
+	npx electron-forge make --arch=arm64
+
+# Build for both Kalyani's macbook darwin x64
+	npx electron-forge make --arch=arm64,x64
+
+# Potential extension : Scratchpad
+	Options: Electron tabs (nope),  BrowserView (nope), child to BrowserWindow
+	https://www.christianengvall.se/electron-app-navigation/ 
