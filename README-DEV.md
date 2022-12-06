@@ -24,3 +24,9 @@ README
 	#Copy to Mac Applications
 
 	cp out/ClipPro-darwin-arm64/ClipPro.app/Contents/MacOS/ClipPro /Applications/
+
+# extensions
+	toggle desc and asc order using environment variable
+	ENV[CLIPPRO_ORDER] = "ASC"
+
+	
