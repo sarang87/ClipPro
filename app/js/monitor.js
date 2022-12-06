@@ -3,6 +3,13 @@ const { spawn } = require("child_process");
 const MAX_SIZE = 100;
 let currentText = clipboard.readText();
 let contents = [];
+
+var nodeConsole = require('console');
+var logger = new nodeConsole.Console(process.stdout, process.stderr);
+logger.log('Hello Logging World!');
+
+document.getElementById("version").innerText = ver;
+
 document.getElementById("output-path").innerText = currentText;
 
 // helper method to remove all nodes for a parent node in DOM
