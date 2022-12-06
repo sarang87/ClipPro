@@ -24,13 +24,6 @@ const createMainWindow = () => {
   });
   mainWindow.setMenuBarVisibility(false)
   mainWindow.loadFile("./app/index.html");
-
-  // BrowserView to implement tabs for scratchpad functionality
-  // TODO : make this view button toggle and change position
-  const view = new BrowserView()
-  mainWindow.setBrowserView(view)
-  view.setBounds({ x: 0, y: 0, width: 300, height: 300 })
-  view.webContents.loadURL('https://electronjs.org')
 };
 
 app.on("ready", () => {
@@ -38,13 +31,6 @@ app.on("ready", () => {
   globalShortcut.register("CmdOrCtrl+R", () => {
     mainWindow.reload();
   });
-
-  // globalShortcut.register("CmdOrCtrl+W", () => {
-  //   mainWindow.close();
-  // });
-  // globalShortcut.register("CmdOrCtrl+N", () => {
-  //   mainWindow.show();
-  // });
   mainWindow.on("close", () => (mainWindow = null));
 });
 
