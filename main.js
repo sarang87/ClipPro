@@ -2,7 +2,7 @@ const {
   app,
   ipcMain,
   BrowserWindow,
-  globalShortcut,
+  globalShortcut
 } = require("electron");
 
 const isDev = process.env.NODE_ENV != "production" ? true : false;
@@ -17,7 +17,8 @@ const createMainWindow = () => {
     resizable: true,
     webPreferences: {
       nodeIntegration: true,
-      webviewTag: true
+      webviewTag: true,
+      enableRemoteModule: true
     },
     frame: false
   });
@@ -27,9 +28,6 @@ const createMainWindow = () => {
 
 app.on("ready", () => {
   createMainWindow();
-  // globalShortcut.register("CmdOrCtrl+R", () => {
-  //   mainWindow.reload();
-  // });
   mainWindow.on("close", () => (mainWindow = null));
 });
 

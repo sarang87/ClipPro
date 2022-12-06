@@ -8,7 +8,8 @@ var nodeConsole = require('console');
 var logger = new nodeConsole.Console(process.stdout, process.stderr);
 logger.log('Hello Logging World!');
 
-document.getElementById("version").innerText = ver;
+var version = require('electron').remote.app.getVersion()
+document.getElementById("version").innerText = version;
 
 document.getElementById("output-path").innerText = currentText;
 
