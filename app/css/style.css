@@ -12,6 +12,10 @@
   width: 100%;
 }
 
+.btns-clear-n-copy {
+  width: 50%;
+}
+
 .output {
   margin-top: 20px;
 }
