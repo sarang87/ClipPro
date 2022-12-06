@@ -27,15 +27,8 @@ const createMainWindow = () => {
 
 app.on("ready", () => {
   createMainWindow();
-  globalShortcut.register("CmdOrCtrl+R", () => {
-    mainWindow.reload();
-  });
-
-  // globalShortcut.register("CmdOrCtrl+W", () => {
-  //   mainWindow.close();
-  // });
-  // globalShortcut.register("CmdOrCtrl+N", () => {
-  //   mainWindow.show();
+  // globalShortcut.register("CmdOrCtrl+R", () => {
+  //   mainWindow.reload();
   // });
   mainWindow.on("close", () => (mainWindow = null));
 });
