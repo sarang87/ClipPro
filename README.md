@@ -1,25 +1,21 @@
-README
+README.md
 
-# CLEARLY, ClipPro is bound to version 11.5.0 of electron and changing it might be the reason i cant build master or updates. fucked up shit. anyway, this branch will always have a stable running version
+Welcome to ClipPro. 
 
-# Run locally
+We offer a new solution to software engineers with busy lives. ClipPro has been tested by real engineers and each one of them uses it slightly differently.
 
-	1. Make sure electron is installed. Run the following command 
-	`npm install electron`
+Ways to use ClipPro:
+	- Backend Dev copies all links, info, messages to clipboard without switching workspaces, apps or context. She then uses the COPY ALL button to save those links to notes. 
 
-	2. Start the app
-	`npm start`
+	- DevOps Dev is frequently switching between different projects and wants their clipboard to be clear. He copies a few links, copies them over to notes, clears his clipboard and switches tasks.
 
-	3. Package app
-	https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
+	- Linux Dev uses ClipPro as a simple clipboard, they select an entry 5 rows down and scrolls through their clipboard history to find the entries they need. 
 
-	--npm install --save-dev @electron-forge/cli-- already added to package.json
+More features:
+	- Clipboard history saved in stack, most recent entry is at the top of clipboard history.
+	- Save upto 100 entries in ClipPro itself
+	
 
-	npx electron-forge import
+Enjoy ClipPro your way!
 
-# Build application for platform
-	npm run make
-
-	#Copy to Mac Applications
-
-	cp out/ClipPro-darwin-arm64/ClipPro.app/Contents/MacOS/ClipPro /Applications/
+Buy me a coffee!
