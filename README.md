@@ -19,3 +19,4 @@ More features:
 Enjoy ClipPro your way!
 
 Buy me a coffee!
+
