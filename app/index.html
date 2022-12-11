@@ -14,12 +14,15 @@
   </head>
   <body>
     <div class="container center-align">
-      <h3><i class="far fa-clipboard"></i> ClipPro</h3>
+      <h3><i class="far fa-clipboard"></i> ClipPro </p></h3>
       <p>Toggle through your clipboard history</p>
 
       <div class="file-field input-field">
-        <div class="btn btn-custom black-text #b2dfdb teal lighten-1">
-          <span>Selected Text</span>
+        <div class="btn btn-custom btns-clear-n-copy black-text #b2dfdb teal lighten-1" id="copy-all-btn">
+          <span>Copy All Text</span>
+        </div>
+        <div class="btn btn-custom btns-clear-n-copy black-text #b2dfdb teal lighten-4" id="clear-all-btn">
+          <span>Clear All Text</span>
         </div>
         <ul class="collection hoverable">
           <a
@@ -28,7 +31,7 @@
           ></a>
         </ul>
 
-        <div class="btn btn-custom black-text #b2dfdb teal lighten-4">
+        <div class="btn btn-custom black-text #b2dfdb blue-grey lighten-4">
           <span>Clipboard History</span>
         </div>
         <div class="collection" id="content-wrapper"></div>
@@ -37,5 +40,7 @@
 
     <script src="js/materialize.min.js"></script>
     <script src="js/monitor.js"></script>
+    <script src="node_modules/electron-tabs/dist/electron-tabs.js"></script>
+
   </body>
 </html>

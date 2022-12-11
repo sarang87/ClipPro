@@ -2,7 +2,7 @@ const {
   app,
   ipcMain,
   BrowserWindow,
-  globalShortcut,
+  globalShortcut
 } = require("electron");
 
 const isDev = process.env.NODE_ENV != "production" ? true : false;
@@ -13,10 +13,12 @@ const createMainWindow = () => {
   mainWindow = new BrowserWindow({
     width: 550,
     height: 600,
-    icon: "./assets/icons/logo.jpg",
+    icon: "./assets/icons/logo.png",
     resizable: true,
     webPreferences: {
       nodeIntegration: true,
+      webviewTag: true,
+      enableRemoteModule: true
     },
     frame: false
   });
@@ -26,16 +28,6 @@ const createMainWindow = () => {
 
 app.on("ready", () => {
   createMainWindow();
-  globalShortcut.register("CmdOrCtrl+R", () => {
-    mainWindow.reload();
-  });
-
-  globalShortcut.register("CmdOrCtrl+W", () => {
-    mainWindow.close();
-  });
-  globalShortcut.register("CmdOrCtrl+N", () => {
-    mainWindow.show();
-  });
   mainWindow.on("close", () => (mainWindow = null));
 });
 
