@@ -20,3 +20,19 @@ Enjoy ClipPro your way!
 
 Buy me a coffee!
 
+## Building for multiple platforms
+ClipPro uses Electron Forge. After installing dependencies, you can create installers for Windows and Linux.
+
+```bash
+npm install
+
+# Build for current platform
+npm run make
+
+# Build for Windows 64-bit
+npx electron-forge make --platform=win32 --arch=x64
+
+# Build for Linux 64-bit
+npx electron-forge make --platform=linux --arch=x64
+```
+
