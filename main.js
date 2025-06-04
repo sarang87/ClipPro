@@ -4,6 +4,8 @@ const {
   BrowserWindow,
   globalShortcut
 } = require("electron");
+const remoteMain = require('@electron/remote/main');
+remoteMain.initialize();
 
 const isDev = process.env.NODE_ENV != "production" ? true : false;
 process.env.NODE_ENV = "development";
@@ -17,13 +19,13 @@ const createMainWindow = () => {
     resizable: true,
     webPreferences: {
       nodeIntegration: true,
-      webviewTag: true,
-      enableRemoteModule: true
+      webviewTag: true
     },
     frame: false
   });
   mainWindow.setMenuBarVisibility(false)
   mainWindow.loadFile("./app/index.html");
+  remoteMain.enable(mainWindow.webContents);
 };
 
 app.on("ready", () => {
